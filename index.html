@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet"href="css/style.css">
     <meta charset="UTF-8">
     <meta name="author" content="Gareth Whitley">
@@ -12,32 +14,40 @@
 </head>
 <body>
     
-<div class="container">
-    <div class="questionBlock">
-        <div class="title">
+<div class="w3-container w3-center">
+    <div class="w3-row">
+        <div class="w3-col s12 m12 l12 title">
             <h2>Guess the port number</h2>
         </div>
-            <div class="question">
-                <p>
-                    <h3 id="question">Loading questions...</h3>
-                    <span id='portText'></span>
-                </p>
-                
-                <p>
-                    <input type="text"name="answer"placeholder="Enter answer"id='answer'class='answer'>
-                </p>
+            <div class="w3-row">
+                <div class="w3-col">
+                    <p>
+                        <h3 id="question">Loading questions...</h3>
+                        <span id='portText'></span>
+                    </p>
+                    
+                    <p>
+                        <input type="text"name="answer"placeholder="Enter answer"id='answer'class='answer'>
+                    </p>
+                    
+                </div>
+
+                <div class="w3-row w3-bar">
+                    <div class="w3-col">
+                        <button id="checkButton">Check answer</button>
+                        <button id="next">Next port</button>
+                    </div>
+                    
+                </div>
                 
             </div>
-                <div class="button">
-                    <button id="checkButton">Check answer</button>
-                    <button id="next">Next port</button>
-                </div>
+                
             </div>
         </div>
     </div>
     
 
-<footer>
+<footer class="w3-container w3-center">
     Predicta-Port version 0.3<br>
     &copy; 2020 Gareth Whitley
     

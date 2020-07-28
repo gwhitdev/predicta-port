@@ -1,8 +1,8 @@
 body {
     background-color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    color: white;
 }
-
 button {
     border: 0;
     background-color: rgba(255,255,255,0.2);
@@ -28,6 +28,7 @@ footer {
     text-align: center;
     font-size: 0.4em;
     color: white;
+    margin-top: 25px;
 }
 h2 {
     font-size: 4em;
@@ -58,26 +59,6 @@ h3 {
     outline: none;
     background-color: rgba(255,255,255,0);
 }
-.container {
-    margin: 0 auto;
-    padding: 15px;
-    width: 90%;
-    height: 100%;
-    background-color: black;
-    /*display: flex;*/
-}
-
-.questionBlock {
-    background-color: black;
-   /* border: 0px solid rgba(255,255,255,0.8);
-    border-bottom-left-radius: 25px;
-    border-top-right-radius: 100px;*/
-    text-align: center;
-    padding: 15px;
-    color: white;
-    padding-bottom: 25px;
-}
-
 /* ANSWER COLOUR CHANGES */
 .redText {
     border-color: red;
@@ -99,8 +80,42 @@ h3 {
     text-transform: uppercase;
 }
 
-/* ANSWER AND PORT DISPLAYS */
+/** ANSWER AND PORT DISPLAYS */
 #portText {
     font-size: 3em;
     color: white;
 }
+
+@media only screen and (max-width: 400px) {
+    h2 {
+        font-size: 1em;
+    }
+}
+
+
+/*
+
+
+
+
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+    width: 90%;
+    height: 100%;
+    background-color: black;
+    
+}
+*//*
+.questionBlock {
+    background-color: black;
+  
+    text-align: center;
+    padding: 15px;
+    color: white;
+    padding-bottom: 25px;
+}
+
+
+**/
