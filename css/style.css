@@ -24,6 +24,11 @@ button:focus {
 button#next {
     margin-left: 40px;
 }
+footer {
+    text-align: center;
+    font-size: 0.4em;
+    color: white;
+}
 h2 {
     font-size: 4em;
     margin-top: 5px;
