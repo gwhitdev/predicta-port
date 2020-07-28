@@ -1,12 +1,11 @@
 body {
     background-color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
-    color: white;
+    color: white!important;
 }
 button {
-    border: 0;
     background-color: rgba(255,255,255,0.2);
-    width: 235px;
+    width: 100%;
     height: 150px;
     border: 5px solid rgba(255,255,255,0.8);
     color: white;
@@ -22,42 +21,49 @@ button:focus {
     outline: none;
 }
 button#next {
-    margin-left: 40px;
+margin-top: 15px;
 }
 footer {
     text-align: center;
     font-size: 0.4em;
     color: white;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 h2 {
-    font-size: 4em;
+    font-size: 2em;
     margin-top: 5px;
     text-transform: uppercase;
+    color: white!important;
 }
 
 h3 {
-    margin-top: 5px;
-    font-size: 7em;
+    margin-top: 25px;
+    font-size: 3em;
     text-decoration: underline;
     text-decoration-color: greenyellow;
     margin-bottom: 0px;
 }
 .answer {
-    width: 500px;
-    height: 200px;
-    margin-top: 75px;
+    width: 100%;
+    height: 150px;
+    margin-top: 25px;
     margin-bottom: 15px;
     background: rgba(255,255,255,0.2);
     color: white;
     text-align: center;
     border: 5px solid white;
-    font-size: 3em;
+    font-size: 1.5em;
     text-transform: uppercase;
 }
 .answer:focus {
     outline: none;
     background-color: rgba(255,255,255,0);
+}
+.buttons {
+    margin: 0 auto;
+}
+.question {
+    margin: 0 auto;
 }
 /* ANSWER COLOUR CHANGES */
 .redText {
@@ -86,36 +92,40 @@ h3 {
     color: white;
 }
 
-@media only screen and (max-width: 400px) {
+@media (min-width: 300px) {
+} 
+
+@media (min-width: 576px) {
     h2 {
-        font-size: 1em;
+        font-size: 3em;
+    } 
+    h3 {
+        font-size: 7em;
     }
+    button#next {
+        margin-top: 15px;
+    }
+    button {
+        width: 100%;
+    }
+    .answer {
+        width: 65%;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    button#next {
+        margin-top: 0px;
+    }
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+
 }
-
-
-/*
-
-
-
-
-
-.container {
-    margin: 0 auto;
-    padding: 15px;
-    width: 90%;
-    height: 100%;
-    background-color: black;
-    
-}
-*//*
-.questionBlock {
-    background-color: black;
-  
-    text-align: center;
-    padding: 15px;
-    color: white;
-    padding-bottom: 25px;
-}
-
-
-**/

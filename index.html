@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet"href="css/style.css">
+
     <meta charset="UTF-8">
     <meta name="author" content="Gareth Whitley">
     <meta name="keywords" content="TCP, IP, Quiz, CompTIA A+ study support">
@@ -14,13 +15,14 @@
 </head>
 <body>
     
-<div class="w3-container w3-center">
-    <div class="w3-row">
-        <div class="w3-col s12 m12 l12 title">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 title text-center">
             <h2>Guess the port number</h2>
         </div>
-            <div class="w3-row">
-                <div class="w3-col">
+    </div>
+            <div class="row question text-center justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-12 text-center">
                     <p>
                         <h3 id="question">Loading questions...</h3>
                         <span id='portText'></span>
@@ -31,14 +33,20 @@
                     </p>
                     
                 </div>
+            </div>
 
-                <div class="w3-row w3-bar">
-                    <div class="w3-col">
+                <div class="row buttons text-center justify-content-center">
+                    <div class="col-sm-12 col-md-4 col-md-4">
                         <button id="checkButton">Check answer</button>
+                        
+
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-sm-4 justify-content-center text-center">
                         <button id="next">Next port</button>
                     </div>
                     
-                </div>
+                    </div>
+                    
                 
             </div>
                 
@@ -47,7 +55,7 @@
     </div>
     
 
-<footer class="w3-container w3-center">
+<footer class="container text-center">
     Predicta-Port version 0.3<br>
     &copy; 2020 Gareth Whitley
     
