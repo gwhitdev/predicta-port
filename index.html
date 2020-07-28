@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Ports Quiz</title>
+</head>
+<body>
+    
+<div class="container">
+    <div class="questionBlock">
+        <div class="title">
+            <h2>Guess the port number</h2>
+        </div>
+            <div class="question">
+                <p>
+                    <h3 id="question">Loading questions...</h3>
+                    <span id='portText'></span>
+                </p>
+                
+                <p>
+                    <input type="text"name="answer"placeholder="Enter answer"id='answer'class='answer'>
+                </p>
+                
+            </div>
+                <div class="button">
+                    <button id="checkButton">Check answer</button>
+                    <button id="next">Next port</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    const question = document.getElementById('question');
+    const portText = document.getElementById('portText');
+    const checkButton = document.getElementById('checkButton');
+    const answer = document.getElementById('answer');
+    const answerText = document.getElementById('answerText');
+    const nextButton = document.getElementById('next');
+    const defaultPlaceholder = 'Enter answer';
+
+class Port {
+    constructor(portName,portType,portNumber) {
+        this.portName = portName;
+        this.portType = portType;
+        this.portNumber = portNumber;
+        this.readOut = function() {
+            return this.portName + ', ' + this.portType + ', ' + this.portNumber;
+        }
+    }
+}
+
+const pop3 = new Port('POP3','TCP',110);
+const imap4 = new Port('IMAP4','TCP',143);
+const ssh = new Port('SSH','TCP',22);
+const telnet = new Port('Telnet','TCP',23);
+const dns = new Port('DNS','UDP',53);
+const rdp = new Port('RDP', 'TCP',3389);
+const ldap = new Port('LDAP','TCP',389);
+const slp = new Port('SLP','TCP',427);
+const snmp = new Port('SNMP','TCP',161);
+const afp = new Port('AFP','TCP',548);
+const netbios = new Port('NetBIOS','TCP',137);
+const ftpData = new Port('FTP data','TCP',20);
+const ftpControl = new Port('FTP control','TCP',21);
+const dhcp = new Port('DHCP','UDP',61);
+const ptth = new Port('HTTP','TCP',80);
+const sptth = new Port('HTTPS','TCP',443);
+const allPorts = [pop3,imap4,ssh,telnet,dhcp,ptth,sptth,dns,rdp,ldap,slp,snmp,afp,netbios,ftpData,ftpControl];
+let randomNumber = 0;
+
+const randomNum = () => {
+    randomNumber = Math.floor(Math.random()*allPorts.length);
+    return randomNumber
+}
+
+randomNum();
+
+questionPortNumber = () => {
+    return portNumQ = allPorts[randomNumber].portNumber;
+}
+
+questionPort = () => {
+    return portNameQ = allPorts[randomNumber].portName; 
+}
+portAbbr = () => {
+    return portType = allPorts[randomNumber].portType;
+}
+createQs = () => {
+    questionPortNumber();
+    questionPort();
+    portAbbr();
+    portText.textContent = '(' + portType + ')';
+    question.textContent = portNameQ;
+    return;
+}
+
+createQs();
+
+console.log('num: ' + portNumQ + ' ' + 'name: ' + portNameQ);
+
+checkAnswer = () => {
+    // Check that the allPorts array has something in it
+    if(allPorts.length > 0) {
+        // Check inputted answer againt generated port number
+        if (answer.value == portNumQ) {
+            //console.log('Correct answer: ' + answer.value);
+            // Add CSS classes for UX
+            answer.classList.add('smallText');
+            answer.classList.add('greenText');
+            answer.value = '';
+            answer.placeholder = 'Correct!';
+            } else if (answer.value != portNumQ) {
+                // If user did not submit any value
+                if (answer.value == '') {
+                    console.log(answer.value);
+                    console.log('Please provide an answer');
+                     // Add CSS classes for UX
+                    answer.classList.add('smallText');
+                    answer.classList.remove('greenText');
+                    answer.classList.add('redText');
+                    answer.value = '';
+                    answer.placeholder = 'Please provide an answer';
+                } else {
+                    // If answer is provided but is incorrect
+                    console.log('Correct answer is: ' + portNumQ);
+                    console.log('Incorrect answer: ' + answer.value);
+                     // Add CSS classes for UX
+                    answer.classList.add('smallText');
+                    answer.classList.add('redText');
+                    answer.value = '';
+                    answer.placeholder = 'Incorrect. Try again.';
+                }
+            } 
+        } else {
+            question.textContent = 'No stored ports to go through. Store some ports.'
+        }
+    }
+    
+    // Initialise the first question
+    createQs();
+
+    // Button event listeners
+    checkButton.addEventListener('click', function() {
+        console.log('num: ' + portNumQ + ' ' + 'name: ' + portNameQ)
+        checkAnswer();
+    })
+    nextButton.addEventListener('click', function() {
+        // Reset CSS classes on input field
+        answer.classList.remove('smallText');
+        answer.classList.remove('redText');
+        answer.classList.remove('greenText');
+        // Create a new random number
+        randomNum();
+        // Generate new port
+        createQs();
+        // Reset answer value and placeholder in input field
+        answer.value = '';
+        answer.placeholder = defaultPlaceholder;
+    })
+</script>
+</html>
