@@ -64,10 +64,9 @@ h3 {
 
 .questionBlock {
     background-color: black;
-    border: 3px solid rgba(255,255,255,0.8);
+   /* border: 0px solid rgba(255,255,255,0.8);
     border-bottom-left-radius: 25px;
-    border-top-right-radius: 100px;
-    box-shadow: 5px;
+    border-top-right-radius: 100px;*/
     text-align: center;
     padding: 15px;
     color: white;
